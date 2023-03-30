@@ -1,0 +1,41 @@
+<!-- <div class="photo-card">
+  <img src="https://gto.ua/" alt="" loading="lazy" />
+  <div class="info">
+    <p class="info-item">
+      <b>Likes</b>
+    </p>
+    <p class="info-item">
+      <b>Views</b>
+    </p>
+    <p class="info-item">
+      <b>Comments</b>
+    </p>
+    <p class="info-item">
+      <b>Downloads</b>
+    </p>
+  </div>
+</div> -->
+
+<div class="photo-card">
+      <a href = "${largeImageURL}">
+  <img src="${webformatURL}" alt="${tags}" class = "lazyload"  loading="lazy" width="410" height = auto  />
+  </a>
+  <div class="info">
+    <p class="info-item">
+      <b>Likes</b>
+      <span>${likes}</span>
+    </p>
+    <p class="info-item">
+      <b>Views</b>
+      <span>${views}</span>
+    </p>
+    <p class="info-item">
+      <b>Comments</b>
+      <span>${comments}</span>
+    </p>
+    <p class="info-item">
+      <b>Downloads</b>
+      <span>${downloads}</span>
+    </p>
+  </div>
+</div>
