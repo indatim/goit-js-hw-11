@@ -1,5 +1,9 @@
 import PicsApiService from './js/pic-service';
 import imagecard from './templates/imagecard.hbs';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const refs = {
     searcher: document.querySelector('.search-form'),
@@ -29,12 +33,22 @@ function onLoadMore() {
 
 function appendPicturesMarkup(hits) {
     refs.gallery.insertAdjacentHTML('beforeend', imagecard(hits));
+    simpleLightbox();
 }
 
 function clearPicturesContainer() {
     refs.gallery.innerHTML = '';
 }
 
+function simpleLightbox() {
+  let lightbox = new SimpleLightbox('.photo-card a', {
+    captions: false,
+    captionDelay: 250,
+    enableKeyboard: true,
+    navText: ['←', '→'],
+  });
+  lightbox.refresh();
+}
 // const options = {
 
 // };
