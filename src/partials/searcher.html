@@ -1,19 +1,38 @@
-<!-- Пошук -->
-<div class="searcher">
-<form class="search-form" id="search-form">
+<!-- <form class="search-form" id="search-form">
   <input
     type="text"
-    name="query"
-    id="searchQuery"
+    name="searchQuery"
     autocomplete="off"
     placeholder="Search images..."
   />
   <button type="submit">Search</button>
-</form>
+</form> -->
+
+
+<!-- Пошук -->
+<div class="searcher">
+  <form class="search-form" id="search-form">
+    <input
+      type="text"
+      name="query"
+      id="searchQuery"
+      autocomplete="off"
+      placeholder="Search images..."
+    />
+    <button type="submit">Search</button>
+  </form>
 </div>
 <!-- Блок галерея -->
 <div class="gallery">
   <!-- Картки зображень -->
 </div>
 <!-- Кнопка пошуку -->
-<button type="button" class="load-more">Загрузити наступні</button>
+<button type="button" class="btn btn-primary button" data-action="load-more">
+  <span
+    class="spinner-border spinner-border-sm spinner is-hidden"
+    role="status"
+    aria-hidden="true"
+  >
+  </span>
+  <span class="label">Загрузити наступні</span>
+</button>
