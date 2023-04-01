@@ -34,17 +34,14 @@ loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 function onSearch(e) {
     e.preventDefault();
 
-    picsApiService.query = e.currentTarget.elements.query.value;
+    picsApiService.query = e.currentTarget.elements.query.value.trim();
 
     if (picsApiService.query === '') {
-        return Notify.failure(`Sorry, there are no images matching your search query. Please try again..`, {cssAnimationStyle: 'zoom'});
+        return Notify.failure(`Please enter something in the field.`, {cssAnimationStyle: 'zoom'});
     }
 
     picsApiService.resetPage();
     picsApiService.fetchPictures().then(hits => {
-        // Notify.success(
-        //   `Hooray! We found ${hits.totalHits} images.`
-        // );
         clearPicturesContainer();
         appendPicturesMarkup(hits);
         refs.loadMoreBtn.style.display = 'block';
