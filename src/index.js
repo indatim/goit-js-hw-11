@@ -30,6 +30,7 @@ refs.loadMoreBtn.style.display = 'none';
 
 refs.searcher.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
+window.addEventListener('scroll', checkPosition);
 
 function onSearch(e) {
     e.preventDefault();
@@ -44,8 +45,9 @@ function onSearch(e) {
     picsApiService.fetchPictures().then(hits => {
         clearPicturesContainer();
         appendPicturesMarkup(hits);
-        refs.loadMoreBtn.style.display = 'block';
-});
+        // refs.loadMoreBtn.style.display = 'block';
+    });
+    picsApiService.incrementPage();
 }
 
 function onLoadMore() {
@@ -87,4 +89,20 @@ function scrollFunction() {
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
+// InfinityScroll
+
+async function checkPosition() {
+  const height = document.body.offsetHeight;
+  const screenHeight = window.innerHeight;
+  const scrolled = window.scrollY;
+  const threshold = height - screenHeight / 4;
+  const position = scrolled + screenHeight;
+    if (position >= threshold) {
+      picsApiService.incrementPage();
+      picsApiService.fetchPictures().then(hits => { appendPicturesMarkup(hits);
+    });
+  }
 }

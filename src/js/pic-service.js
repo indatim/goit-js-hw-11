@@ -122,7 +122,7 @@ export default class PicsApiService {
             Notify.success(`Hooray! We found ${response.data.total} images.`, { cssAnimationStyle: 'zoom' });
         }
 
-        return response.data.hits;
+            return response.data.hits;
 
     } catch (error) {
         Notify.failure(error.message);
