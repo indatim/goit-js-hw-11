@@ -116,7 +116,7 @@ export default class PicsApiService {
             return;
         }
         if (params.page >= totalPages) {
-            Notify.info("We're sorry, but you've reached the end of search results.", {cssAnimationStyle: 'zoom'});
+            Notify.info("We're sorry, but you've reached the end of search results.", { cssAnimationStyle: 'zoom' });
         }
         if (params.page === 1) {
             Notify.success(`Hooray! We found ${response.data.total} images.`, { cssAnimationStyle: 'zoom' });

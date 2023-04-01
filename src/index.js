@@ -1,6 +1,7 @@
 import PicsApiService from './js/pic-service';
 import imagecard from './templates/imagecard.hbs';
-import LoadMoreBtn from './js/load-more-btn';
+import throttle from 'lodash.throttle';
+// import LoadMoreBtn from './js/load-more-btn';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import SimpleLightbox from 'simplelightbox';
@@ -13,24 +14,24 @@ const refs = {
     loadMoreBtn: document.querySelector('[data-action="load-more"]'),
 }
 
-const loadMoreBtn = new LoadMoreBtn({
-    selector: '[data-action="load-more"]',
-    hidden: true,
-});
+// const loadMoreBtn = new LoadMoreBtn({
+//     selector: '[data-action="load-more"]',
+//     hidden: true,
+// });
 
 const picsApiService = new PicsApiService();
 
-console.log(loadMoreBtn);
+// console.log(loadMoreBtn);
 
 // loadMoreBtn.show();
 // loadMoreBtn.disable();
 
-refs.loadMoreBtn.style.display = 'none';
+// refs.loadMoreBtn.style.display = 'none';
 
 
 refs.searcher.addEventListener('submit', onSearch);
-loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
-window.addEventListener('scroll', checkPosition);
+// loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
+window.addEventListener('scroll', throttle(checkPosition, 300));
 
 function onSearch(e) {
     e.preventDefault();
@@ -93,7 +94,6 @@ function topFunction() {
 
 
 // InfinityScroll
-
 async function checkPosition() {
   const height = document.body.offsetHeight;
   const screenHeight = window.innerHeight;

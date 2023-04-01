@@ -1,6 +1,6 @@
 .searcher {
-    background-color: #4056b4;
-    height: 15%;
+    background-color: #269700;
+    height: auto;
 }
 
 .search-form {
@@ -82,6 +82,7 @@
 }
 
 .info-item {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -89,51 +90,51 @@
     padding: 0 12px;
 }
 
-.info-item-api {
-    padding-top: 5px;
-}
+// .info-item-api {
+//     padding-top: 5px;
+// }
 
-.button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+// .button {
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
 
-.button[data-action="load-more"] {
-        display: flex;
-            margin: 0px auto 20px;
-            padding: 10px 20px;
-            text-align: center;
-            text-transform: uppercase;
-            font-size: large;
-            color: #fff;
-            background-color: #4056b4;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-}
+// .button[data-action="load-more"] {
+//         display: flex;
+//             margin: 0px auto 20px;
+//             padding: 10px 20px;
+//             text-align: center;
+//             text-transform: uppercase;
+//             font-size: large;
+//             color: #fff;
+//             background-color: #4056b4;
+//             border: none;
+//             border-radius: 2px;
+//             cursor: pointer;
+// }
 
-.button[data-action="load-more"] {
-    display: flex;
-    margin: 0px auto 20px;
-    padding: 10px 20px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: large;
-    color: #fff;
-    background-color: #4056b4;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-}
+// .button[data-action="load-more"] {
+//     display: flex;
+//     margin: 0px auto 20px;
+//     padding: 10px 20px;
+//     text-align: center;
+//     text-transform: uppercase;
+//     font-size: large;
+//     color: #fff;
+//     background-color: #4056b4;
+//     border: none;
+//     border-radius: 2px;
+//     cursor: pointer;
+// }
 
-.button.is-hidden {
-    display: none;
-}
+// .button.is-hidden {
+//     display: none;
+// }
 
-.button>.spinner.is-hidden {
-    display: none;
-}
+// .button>.spinner.is-hidden {
+//     display: none;
+// }
 
 .myOnTopBtn {
     display: none;
